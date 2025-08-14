@@ -1,15 +1,16 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class VowelCounterFourthOption{
     
 
-    public static long countVowels(String text) {
-        String vowels = "aeiou";
-        return text.toLowerCase()
-                .chars()
-                .filter(c -> vowels.indexOf(c) != -1)
-                .count();
-    }
+public static long countVowels(String text) {
+    String vowels = "aeiou";
+    return text.toLowerCase()
+               .chars()
+               .filter(c -> vowels.indexOf(c) != -1)
+               .count();
+}
 
 
     public static void main(String[] args){
