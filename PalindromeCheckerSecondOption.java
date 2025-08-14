@@ -1,16 +1,11 @@
 import java.util.Scanner;
-public class PalindromeChecker {
+public class PalindromeCheckerSecondOption {
 
     public static boolean isPalindrome(String text) {
         String clearText = text.toLowerCase().strip().replaceAll("[^a-z0-9]", "");
-        int len = clearText.length();
-        for (int i=0; i < len/2; i++){
-            if (clearText.charAt(i) != clearText.charAt(len-1-i)){
-                return false;
-            }
-        }return true;     
+        String reversedText = new StringBuilder(clearText).reverse().toString();
+        return clearText.equals(reversedText);      
     }
-
     public static void main(String[] args) {
         System.out.println(isPalindrome("level"));
         System.out.println(isPalindrome("hello"));
@@ -27,10 +22,3 @@ public class PalindromeChecker {
         }
     }
 }
-
-
-
-
-
-
-
