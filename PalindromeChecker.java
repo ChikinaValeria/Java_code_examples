@@ -2,21 +2,32 @@ import java.util.Scanner;
 public class PalindromeChecker {
 
     public static boolean isPalindrome(String text) {
-        String cleanedText = text.replaceAll("[^a-zA-Z]", "").toLowerCase();
-        String reversedText = new StringBuilder(cleanedText).reverse().toString();
-        return cleanedText.equals(reversedText);
+        String clearText = text.toLowerCase().strip().replaceAll("[^a-z0-9]", "");
+        int len = clearText.length();
+        for (int i=0; i < len/2; i++){
+            if (clearText.charAt(i) != clearText.charAt(clearText.length()-1-i)){
+                System.out.println(clearText.charAt(i) + " != " + clearText.charAt(clearText.length()-1-i));
+                return false;
+            }
+        }return true;
+
+        
     }
 
     public static void main(String[] args) {
-        System.out.println("Enter a phrase to check if it's a palindrome:");
+        System.out.println(isPalindrome("level"));
+        System.out.println(isPalindrome("hello"));
+        System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
+        System.out.println(isPalindrome("No lemon, no melon"));
+
+        System.out.println("Enter a string of text to check whether it is palindrome or not!");
         Scanner scan = new Scanner(System.in);
-        String phrase = scan.nextLine();
-        if (isPalindrome(phrase)) {
-            System.out.println("The phrase is a palindrome.");
+        String userInput = scan.nextLine();
+        if (isPalindrome(userInput)) {
+            System.out.println("The text is a palindrome.");
         } else {
-            System.out.println("The phrase is not a palindrome.");
+            System.out.println("The text is not a palindrome.");
         }
-        scan.close();
     }
 }
 
