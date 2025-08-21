@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FindMaxNumberSecondOptionTest {
 
@@ -33,4 +33,21 @@ class FindMaxNumberSecondOptionTest {
         int max = FindMaxNumberSecondOption.findMaxNumber(arr);
         assertEquals(-3, max);
     }
+
+    @Test
+    void throwsExceptionForEmptyArray() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            FindMaxNumberSecondOption.findMaxNumber(new int[]{});
+        });
+        assertEquals("Array must not be empty", exception.getMessage());
+    }
+
+    @Test
+    void testFindMaxNumberNullArray() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            FindMaxNumberSecondOption.findMaxNumber(null);
+        });
+        assertEquals("Array must not be empty", exception.getMessage());
+    }
+
 }
