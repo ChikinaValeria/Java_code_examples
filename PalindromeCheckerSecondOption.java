@@ -20,5 +20,6 @@ public class PalindromeCheckerSecondOption {
         } else {
             System.out.println("The text is not a palindrome.");
         }
+        scan.close();
     }
 }
