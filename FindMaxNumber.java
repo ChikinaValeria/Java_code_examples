@@ -1,7 +1,11 @@
 public class FindMaxNumber {
     public static int findMaxNumber(int[] arr){
-        int max = -2147483648;
-        for (int i=0; i<arr.length; i++){
+        if (arr == null || arr.length == 0) {
+            //unchecked exeption, parent - RuntimeExeption
+            throw new IllegalArgumentException("Array must not be empty");
+        }
+        int max = arr[0];
+        for (int i=1; i<arr.length; i++){
             if (arr[i]> max){
                 max = arr[i];
             }
@@ -16,12 +20,15 @@ public class FindMaxNumber {
         int[] arr3 = {2, 2, 2};
         int[] arr4 = {-3, -5, -18};
         int[] arr5 = {78, 5, 9087, 234};
-
-        System.out.println("The maximum number is: "+ findMaxNumber(arr1));
-        System.out.println("The maximum number is: "+ findMaxNumber(arr2));
-        System.out.println("The maximum number is: "+ findMaxNumber(arr3));
-        System.out.println("The maximum number is: "+ findMaxNumber(arr4));
-        System.out.println("The maximum number is: "+ findMaxNumber(arr5));
+        try {
+            System.out.println("The maximum number is: "+ findMaxNumber(arr1));
+            System.out.println("The maximum number is: "+ findMaxNumber(arr5));
+            System.out.println("The maximum number is: "+ findMaxNumber(arr3));
+            System.out.println("The maximum number is: "+ findMaxNumber(arr4));
+            System.out.println("The maximum number is: "+ findMaxNumber(arr2));;
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
 
