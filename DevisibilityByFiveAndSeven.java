@@ -6,19 +6,11 @@ public class DevisibilityByFiveAndSeven {
     }
 
 
-    public static void main(String[] args){
-        //Scanner scan = new Scanner(System.in);
-        //int myNumber = Integer.parseInt(scan.nextLine());
-        boolean isDevisible = isDevisibleByFiveAndSeven(5);
-        System.out.println("Your number is " + (isDevisible == true? "devisible by five and seven": "not devisible by five and seven"));
-        isDevisible = isDevisibleByFiveAndSeven(12);
-        System.out.println("Your number is " + (isDevisible == true? "devisible by five and seven": "not devisible by five and seven"));
-        isDevisible = isDevisibleByFiveAndSeven(7);
-        System.out.println("Your number is " + (isDevisible == true? "devisible by five and seven": "not devisible by five and seven"));
-        isDevisible = isDevisibleByFiveAndSeven(35);
-        System.out.println("Your number is " + (isDevisible == true? "devisible by five and seven": "not devisible by five and seven"));
-        isDevisible = isDevisibleByFiveAndSeven(70);
-        System.out.println("Your number is " + (isDevisible == true? "devisible by five and seven": "not devisible by five and seven"));
-
+    public static void main(String[] args) {
+        int[] testNumbers = {5, 12, 7, 35, 70};
+        for (int number : testNumbers) {
+            boolean isDevisible = isDevisibleByFiveAndSeven(number);
+            System.out.println("Your number " + number + " is " + (isDevisible ? "devisible by five and seven" : "not devisible by five and seven"));
+        }
     }
 }    
