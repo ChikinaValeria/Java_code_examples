@@ -20,6 +20,12 @@ Contains following methods:
   * using loop
   * using try-catch, TDD development methodology
 
+* **DevisibilityByFiveAndSeven**
+
+  * using nested ternary operator
+  * using if-else
+  * using && logical operator  
+
 
 
 
