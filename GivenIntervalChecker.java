@@ -2,11 +2,7 @@
 
 public class GivenIntervalChecker{
     public static boolean doesIntBelongToInterval(int number){
-        if (number < 10 || number > 20){
-            return false;
-        } else {    
-            return true;    
-        }
+        return number >= 10 && number <= 20;
     }
 
     public static void main (String[] args){
