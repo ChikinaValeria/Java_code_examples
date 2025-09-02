@@ -18,6 +18,7 @@ public class IntervalChecker{
         boolean result6 = doesIntBelongToInterval(new int[]{10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}, 15);
         boolean result7 = doesIntBelongToInterval(new int[]{10}, 11);
         boolean result8 = doesIntBelongToInterval(new int[]{10}, 10);
+        boolean result9 = doesIntBelongToInterval(null, 10);
         System.out.println(result);
         System.out.println(result2);
         System.out.println(result3);
@@ -26,5 +27,6 @@ public class IntervalChecker{
         System.out.println(result6);
         System.out.println(result7);
         System.out.println(result8);
+        System.out.println(result9);
     }
 }
