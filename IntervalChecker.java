@@ -1,5 +1,8 @@
 public class IntervalChecker{
     public static boolean doesIntBelongToInterval(int[] interval, int number){
+        if (interval == null || interval.length == 0){
+            return false;
+        }
         if (number<interval[0]|| number>interval[interval.length-1]){
             return false;
         }
